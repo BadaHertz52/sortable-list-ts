@@ -228,7 +228,7 @@ gitignore에 다음을 추가한다.
 ...
 ```
 
-src, public의 변경은 git에 담기지 않기 때문에 <span style="color:#0054b9"> **반드시 배포하기 전에 npm urn publish 로 변경사항은 dist에 반영해주어야 한다.** </span>
+src, public의 변경은 git에 담기지 않기 때문에 ⚠️  **반드시 배포하기 전에 npm urn publish 로 변경사항은 dist에 반영해주어야 한다.** 
 
 ### D. npm login
 
