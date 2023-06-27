@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import "./SortableList.css";
 import SortableListItem from "./SortableListItem";
 
-function SortableList({ data, onDropItem, onClickItem, renderItem }) {
+function SortableList({ data, onClickItem, renderItem }) {
   /**
    * drag되는 item 의 index
    */
@@ -13,16 +13,15 @@ function SortableList({ data, onDropItem, onClickItem, renderItem }) {
    *
    * @param  dropIndex  : drag 되는 item의 drop될 위치의 index
    */
-  const onDrop = useCallback(
+  const onDropItem = useCallback(
     (dropIndex) => {
       const dragItem = listData[startIndex];
       const list = [...listData];
       list.splice(startIndex, 1);
       list.splice(dropIndex - (startIndex < dropIndex ? -1 : 0), 0, dragItem);
       setListData(list);
-      onDropItem(list);
     },
-    [startIndex, onDropItem, listData]
+    [startIndex, listData]
   );
   return (
     <ul className="sortable-list">
@@ -31,7 +30,7 @@ function SortableList({ data, onDropItem, onClickItem, renderItem }) {
           key={index}
           index={index}
           draggable={true}
-          onDropItem={onDrop}
+          onDropItem={onDropItem}
           onDragStart={onDragStart}
           onClickItem={onClickItem}
         >
@@ -42,7 +41,7 @@ function SortableList({ data, onDropItem, onClickItem, renderItem }) {
         key={listData.length}
         index={listData.length}
         draggable={false}
-        onDropItem={onDrop}
+        onDropItem={onDropItem}
       />
     </ul>
   );
