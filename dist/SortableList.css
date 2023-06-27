@@ -1,0 +1,20 @@
+.sortable-list {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 0;
+  margin: 0;
+}
+.sortable-list .item {
+  padding: 10px 0;
+  border-top: 2px solid transparent;
+}
+/* .sortable-list item의 모든 하위 요소 */
+.sortable-list .item * {
+  pointer-events: none;
+}
+.sortable-list .item.dragstart {
+  opacity: 0.5;
+}
+.sortable-list .item.dragover {
+  border-top-color: rgb(112, 112, 112);
+}
