@@ -1,7 +1,9 @@
 {
-  "name": "sortable",
+  "name": "@badahertz52/sortable-list",
   "version": "0.1.0",
-  "private": true,
+  "module": "dist/SortableList.js",
+  "main": "dist/SortableList.js",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +36,15 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/preset-react": "^7.22.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
     ]
   }
 }
