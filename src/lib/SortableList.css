@@ -16,5 +16,5 @@
   opacity: 0.5;
 }
 .sortable-list .item.dragover {
-  border-top-color: rgb(23, 89, 118);
+  border-top-color: rgb(112, 112, 112);
 }
