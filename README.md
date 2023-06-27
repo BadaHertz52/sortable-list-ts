@@ -191,7 +191,6 @@ npm i -D @babel.cli @babel/preset-react
   "private": false,
 
   "scripts": {
-
     "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
 
@@ -228,28 +227,30 @@ gitignore에 다음을 추가한다.
 ...
 ```
 
-src, public의 변경은 git에 담기지 않기 때문에 ⚠️  **반드시 배포하기 전에 npm urn publish 로 변경사항은 dist에 반영해주어야 한다.** 
+src, public의 변경은 git에 담기지 않기 때문에 ⚠️ **반드시 배포하기 전에 npm urn publish 로 변경사항은 dist에 반영해주어야 한다.**
 
 ### D. npm login
 
 프로젝트 터미널에서 다음 명령어를 사용하여 npm 에 로그인을 해준다.
 
-    ```bash
-     npm login
-    ```
+```bash
+ npm login
+```
 
 차례 대로 유저네임, 비밀번호, 이메일, 이메일 인증 번호를 입력하면 되는데 비밀번호 입력 시 보안상의 이유로 텍스트가 화면에 표시되지 않기 때문에 화면에 표시되는 것이 없다해도 당황하지 말고 입력하면 된다.
 
 ### E. 패키지 배포
 
-    패키지를 처음 배포하는 경우라면 다음의 명령어를 사용하면 된다.
-    ```bash
-     npm publish ---access public
-    ```
-    이때
-    "'rm'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다." 라는 오류를 나온다면, cmd 가 아닌 git bash 창에서 명령어을 입력하면 오류가 발생하지 않는다.
+패키지를 처음 배포하는 경우라면 다음의 명령어를 사용하면 된다.
 
-    이후에 패키지를 수정/보안해서 재배포하는 경우라면 package.json 속 version을 수정한 후 다음의 명령어를 사용하면 된다.
-    ```bash
-    npm public
-    ```
+```bash
+  npm publish ---access public
+```
+
+이때 "'rm'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다." 라는 오류를 나온다면, cmd 가 아닌 git bash 창에서 명령어을 입력하면 오류가 발생하지 않는다.
+
+이후에 패키지를 수정/보안해서 재배포하는 경우라면 package.json 속 version을 수정한 후 다음의 명령어를 사용하면 된다.
+
+```bash
+  npm public
+```
