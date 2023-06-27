@@ -189,17 +189,16 @@ npm i -D @babel.cli @babel/preset-react
   "main": "dist/SortableList.js",
   "version": "0.1.0",
   "private": false,
-  //....
+
   "scripts": {
-    //...
+
     "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
-  //....
+
   "devDependencies": {
     "@babel/cli": "^7.22.5",
     "@babel/preset-react": "^7.22.5"
   },
-  //....
   "babel": {
     "presets": ["@babel/preset-react"]
   }
