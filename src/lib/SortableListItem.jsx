@@ -43,6 +43,8 @@ function SortableListItem({
       onDragOver={onDragOver}
       onDrop={onDrop}
       onClick={onClick}
+      onMouseEnter={() => itemRef.current?.classList.add("on")}
+      onMouseLeave={() => itemRef.current?.classList.remove("on")}
     >
       {children}
     </li>
