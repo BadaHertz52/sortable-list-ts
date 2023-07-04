@@ -1,17 +1,30 @@
 {
-  "name": "@badahertz52/sortable-list",
-  "version": "0.1.0",
-  "module": "dist/SortableList.js",
-  "main": "dist/SortableList.js",
+  "name": "@badahertz52/sortable-list-tsc",
+  "version": "0.0.3",
+  "author": {
+    "name": "badahertzt52"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BadaHertz52/sortable-list-tsc.git"
+  },
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "private": false,
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "typescript": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -19,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
+    "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files && tsc",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -50,5 +63,5 @@
       "@babel/preset-react"
     ]
   },
-  "homepage": " https://badahertz52.github.io/sortable"
+  "homepage": " https://badahertz52.github.io/sortable-list-tsc"
 }

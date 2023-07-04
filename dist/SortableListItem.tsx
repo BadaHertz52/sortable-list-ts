@@ -1,4 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, ReactNode, DragEvent } from "react";
+
+type SortableListItemProps = {
+  index: number;
+  draggable: boolean;
+  children?: ReactNode;
+  onDragStart?: (index: number) => void;
+  onDropItem: (index: number) => void;
+  onClickItem?: (index: number) => void;
+};
 
 function SortableListItem({
   index,
@@ -7,30 +16,34 @@ function SortableListItem({
   onDragStart,
   onDropItem,
   onClickItem,
-}) {
-  const itemRef = useRef(null);
+}: SortableListItemProps) {
+  const itemRef = useRef<HTMLLIElement>(null);
   const onDragStartItem = () => {
-    itemRef.current.classList.add("dragstart");
-    onDragStart(index);
+    itemRef.current?.classList.add("dragstart");
+    onDragStart && onDragStart(index);
   };
   const onDragEnd = () => {
-    itemRef.current.classList.remove("dragstart");
+    itemRef.current?.classList.remove("dragstart");
   };
   const onDragEnter = () => {
-    itemRef.current.classList.add("dragover");
+    itemRef.current?.classList.add("dragover");
   };
   const onDragLeave = () => {
-    itemRef.current.classList.remove("dragover");
+    itemRef.current?.classList.remove("dragover");
   };
   /**
    * onDrop 의 선행 조건
    */
-  const onDragOver = (event) => event.preventDefault();
+  const onDragOver = (event: DragEvent<HTMLLIElement>) => {
+    event.preventDefault();
+  };
   const onDrop = () => {
-    itemRef.current.classList.remove("dragover");
+    itemRef.current?.classList.remove("dragover");
     onDropItem(index);
   };
-  const onClick = () => onClickItem(index);
+  const onClick = () => {
+    onClickItem && onClickItem(index);
+  };
   return (
     <li
       ref={itemRef}
