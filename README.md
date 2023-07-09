@@ -1,7 +1,7 @@
 # sortable-list-tsc
 
-[🔗sortable-list 패키지 바로가기](https://www.npmjs.com/package/@badahertz52/sortable-list-tsc)
-
+[🔗sortable-list-tsc 패키지 바로가기](https://www.npmjs.com/package/@badahertz52/sortable-list-tsc)
+[🔗 sortable-list-tsc 패키지 사용한 샘플 보러가기 ]( https://badahertz52.github.io/sortable-list-tsc/)
 ## <div id="sortable">1. Sortable List</div>
 
 ## <div id="#introduce">1) 소개</div>
