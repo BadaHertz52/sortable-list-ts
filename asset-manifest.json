@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sortable-list-ts/static/css/main.b4994deb.css",
-    "main.js": "/sortable-list-ts/static/js/main.59f0f043.js",
-    "static/js/787.def29cb2.chunk.js": "/sortable-list-ts/static/js/787.def29cb2.chunk.js",
-    "index.html": "/sortable-list-ts/index.html",
-    "main.b4994deb.css.map": "/sortable-list-ts/static/css/main.b4994deb.css.map",
-    "main.59f0f043.js.map": "/sortable-list-ts/static/js/main.59f0f043.js.map",
-    "787.def29cb2.chunk.js.map": "/sortable-list-ts/static/js/787.def29cb2.chunk.js.map"
+    "main.css": "/sortable-list-tsc/static/css/main.b4994deb.css",
+    "main.js": "/sortable-list-tsc/static/js/main.c25a1c7d.js",
+    "static/js/787.1d3cab70.chunk.js": "/sortable-list-tsc/static/js/787.1d3cab70.chunk.js",
+    "index.html": "/sortable-list-tsc/index.html",
+    "main.b4994deb.css.map": "/sortable-list-tsc/static/css/main.b4994deb.css.map",
+    "main.c25a1c7d.js.map": "/sortable-list-tsc/static/js/main.c25a1c7d.js.map",
+    "787.1d3cab70.chunk.js.map": "/sortable-list-tsc/static/js/787.1d3cab70.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b4994deb.css",
-    "static/js/main.59f0f043.js"
+    "static/js/main.c25a1c7d.js"
   ]
 }
