@@ -1,15 +1,16 @@
-# sortable-list-tsc
+# sortable-list-ts
 
-[🔗sortable-list-tsc 패키지 바로가기](https://www.npmjs.com/package/@badahertz52/sortable-list-tsc)
+[🔗sortable-list-ts 패키지 바로가기](https://www.npmjs.com/package/@badahertz52/sortable-list-ts)
 
-[🔗 sortable-list-tsc 패키지 사용한 샘플 보러가기 ]( https://badahertz52.github.io/sortable-list-tsc/)
+[🔗 sortable-list-ts 패키지 사용한 샘플 보러가기 ](https://badahertz52.github.io/sortable-list-ts/)
+
 ## <div id="sortable">1. Sortable List</div>
 
 ## <div id="#introduce">1) 소개</div>
 
 <img alt="project" src="./sortable.gif" width="150px" />
 
-마우스의 드래그, 드롭을 이용해 아이템을 재정렬할 할 수 있는 기능을 제공하는 [sortable-list 라이브러리](https://www.npmjs.com/package/@badahertz52/sortable-list) 는 react(with js)에서만 사용할 수 있었기 때문에, typescript 로 진행하는 react 프로젝트에서도 사용할 수 있는 sortable-list-tsc를 만들었다.
+마우스의 드래그, 드롭을 이용해 아이템을 재정렬할 할 수 있는 기능을 제공하는 [sortable-list 라이브러리](https://www.npmjs.com/package/@badahertz52/sortable-list) 는 react(with js)에서만 사용할 수 있었기 때문에, typescript 로 진행하는 react 프로젝트에서도 사용할 수 있는 sortable-list-ts를 만들었다.
 
 🔗[sortable-list github 바로가기](https://github.com/BadaHertz52/sortable)
 
@@ -20,7 +21,7 @@
 ### A. 설치
 
 ```bash
-npm i @badahertz52/sortable-list-tsc
+npm i @badahertz52/sortable-list-ts
 ```
 
 ### B. 설명
