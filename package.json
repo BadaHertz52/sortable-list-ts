@@ -1,12 +1,12 @@
 {
-  "name": "@badahertz52/sortable-list-tsc",
-  "version": "0.0.3",
+  "name": "@badahertz52/sortable-list-ts",
+  "version": "0.0.4",
   "author": {
     "name": "badahertzt52"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BadaHertz52/sortable-list-tsc.git"
+    "url": "https://github.com/BadaHertz52/sortable-list-ts.git"
   },
   "module": "dist/index.js",
   "main": "dist/index.js",
@@ -24,7 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^5.1.6",
+    "typescript": "^4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -63,5 +63,5 @@
       "@babel/preset-react"
     ]
   },
-  "homepage": " https://badahertz52.github.io/sortable-list-tsc"
+  "homepage": "https://badahertz52.github.io/sortable-list-ts"
 }

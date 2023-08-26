@@ -1,4 +1,10 @@
-import React, { useRef, ReactNode, DragEvent } from "react";
+import React, {
+  useRef,
+  ReactNode,
+  DragEvent,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type SortableListItemProps = {
   index: number;
@@ -7,16 +13,23 @@ type SortableListItemProps = {
   onDragStart?: (index: number) => void;
   onDropItem: (index: number) => void;
   onClickItem?: (index: number) => void;
+  mobileDrag: boolean;
+  setMobileDrag: Dispatch<SetStateAction<boolean>>;
+  startIndex: number;
 };
 
-function SortableListItem({
+const SortableListItem = ({
   index,
   draggable,
   children,
   onDragStart,
   onDropItem,
   onClickItem,
-}: SortableListItemProps) {
+  mobileDrag,
+  setMobileDrag,
+  startIndex,
+}: SortableListItemProps) => {
+  let timeout: undefined | NodeJS.Timeout = undefined;
   const itemRef = useRef<HTMLLIElement>(null);
   const onDragStartItem = () => {
     itemRef.current?.classList.add("dragstart");
@@ -44,10 +57,25 @@ function SortableListItem({
   const onClick = () => {
     onClickItem && onClickItem(index);
   };
+  const onTouchStart = () => {
+    if (!mobileDrag) {
+      timeout = setTimeout(() => {
+        setMobileDrag(true);
+        onDragStartItem();
+      }, 1000);
+    }
+  };
+  const onTouchEnd = () => {
+    if (timeout) {
+      clearTimeout(timeout);
+      timeout = undefined;
+    }
+  };
   return (
     <li
       ref={itemRef}
       className="item"
+      id={`sortableList_item_${index}`}
       draggable={draggable || false}
       onDragStart={onDragStartItem}
       onDragEnd={onDragEnd}
@@ -58,10 +86,12 @@ function SortableListItem({
       onClick={onClick}
       onMouseEnter={() => itemRef.current?.classList.add("on")}
       onMouseLeave={() => itemRef.current?.classList.remove("on")}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       {children}
     </li>
   );
-}
+};
 
-export default SortableListItem;
+export default React.memo(SortableListItem);

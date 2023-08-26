@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode, Dispatch, SetStateAction } from "react";
 type SortableListItemProps = {
     index: number;
     draggable: boolean;
@@ -6,6 +6,9 @@ type SortableListItemProps = {
     onDragStart?: (index: number) => void;
     onDropItem: (index: number) => void;
     onClickItem?: (index: number) => void;
+    mobileDrag: boolean;
+    setMobileDrag: Dispatch<SetStateAction<boolean>>;
+    startIndex: number;
 };
-declare function SortableListItem({ index, draggable, children, onDragStart, onDropItem, onClickItem, }: SortableListItemProps): import("react/jsx-runtime").JSX.Element;
-export default SortableListItem;
+declare const _default: React.MemoExoticComponent<({ index, draggable, children, onDragStart, onDropItem, onClickItem, mobileDrag, setMobileDrag, startIndex, }: SortableListItemProps) => import("react/jsx-runtime").JSX.Element>;
+export default _default;

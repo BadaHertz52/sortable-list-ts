@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import "./SortableList.css";
 type SortableListProps = {
     data: any;
@@ -6,5 +6,5 @@ type SortableListProps = {
     renderItem: (item: any, index: number) => JSX.Element;
     updateData?: (newPlayList: any) => void;
 };
-declare function SortableList({ data, onClickItem, renderItem, updateData, }: SortableListProps): import("react/jsx-runtime").JSX.Element;
-export default SortableList;
+declare const _default: React.MemoExoticComponent<({ data, onClickItem, renderItem, updateData, }: SortableListProps) => import("react/jsx-runtime").JSX.Element>;
+export default _default;
