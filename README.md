@@ -71,6 +71,7 @@ type SortableListProps = {
   onClickItem: (index: number) => void;
   renderItem: (item: any, index: number) => JSX.Element;
   updateList?: (newPlayList: any) => void;
+  dragItemStyleProps?: CSSProperties;
 };
 
 const SortableList = ({props}:SortableListProps) => {
@@ -86,6 +87,7 @@ const SortableList = ({props}:SortableListProps) => {
   |onClickItem|정렬된 아이템들을 클릭 할 때 발생하는 이벤트 |
   |renderItem| SortableItem의 children 요소를 반환하는 함수로 정렬할 아이템을 화면상에 어떻게 보일 지를 결정한다. <br/> parameter: item (data의 item), index(item의 data 속 index) |
   |updateData|onDropItem 에서 item을 재졍렬해 data를 변경할때, 변경된 data를 SortableList 외부에서도 반영할 수 있게 해ㅔ준다. |
+  |dragItemStyleProps| 모바일 브라우저에서 드래그앤 드롭을 실행 시, 터치 포인트를 따라다니는 요소의 스타일로 기본값은 undefined ,type:CSSProperties|undefined|
 
 ### b. 사용 예시
 
@@ -165,3 +167,9 @@ npm run start
 ```bash
 npm publish
 ```
+
+## Update
+
+🔧 2023 .8 d
+
+- 모바일 브라우저에서도 터치를 통해 드래그 앤 드롭을 할 수 있도록 함
