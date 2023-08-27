@@ -53,7 +53,7 @@ const SortableItem = ({ props }: SortableListItemProps) => {
   |props|설명|
   |---|---|
   | index|SortableItem이 감싸고 있는 data 속 아이템의 index |
-  draggable|마우스로 드래그 할 수 있는 지 여부 <br/> type:boolean|
+  draggable|마우스로 드래그 할 수 있는 지 여부, type:boolean|
   children|data 속의 아이템을 화면에 표시하는 컴포넌트 ,<br/> 예시 : <a href="#testItem"> TestItem </a>|
   onDragStart| 드래그 시,startIndex의 상태를 드래그되는 아이템의 index로 변경하는 함수 |
   onDropItem| 아이템을 드롭 시, 드롭되는 위치에 맞게 아이템을 재정렬하는 함수|
