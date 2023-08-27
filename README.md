@@ -52,9 +52,9 @@ const SortableItem = ({ props }: SortableListItemProps) => {
 - SortableItem의 props
   |props|설명|
   |---|---|
-  | index|SortableItem이 감싸고 있는 data 속 아이템의 index |
-  draggable|마우스로 드래그 할 수 있는 지 여부, type:boolean|
-  children|data 속의 아이템을 화면에 표시하는 컴포넌트 ,<br/> 예시 : <a href="#testItem"> TestItem </a>|
+  |index|SortableItem이 감싸고 있는 data 속 아이템의 index |
+  draggable|마우스로 드래그 할 수 있는 지 여부. <br/>type:boolean|
+  children|data 속의 아이템을 화면에 표시하는 컴포넌트 <br/> 예시 : <a href="#testItem"> TestItem </a>|
   onDragStart| 드래그 시,startIndex의 상태를 드래그되는 아이템의 index로 변경하는 함수 |
   onDropItem| 아이템을 드롭 시, 드롭되는 위치에 맞게 아이템을 재정렬하는 함수|
   onClickItem|정렬된 아이템들을 클릭 할 때 발생하는 이벤트|
@@ -82,19 +82,18 @@ const SortableList = ({props}:SortableListProps) => {
 - SortableList의 props
   |props|설명|
   |---|---|
-  |data|정렬할 아이템들을 담은 배열로 배열안 요소의 형식은 사용자가 지정할 수 있다 <br/>
-  type: Array|
+  |data|정렬할 아이템들을 담은 배열로 배열안 요소의 형식은 사용자가 지정할 수 있음.<br/> type: Array|
   |onClickItem|정렬된 아이템들을 클릭 할 때 발생하는 이벤트 |
-  |renderItem| SortableItem의 children 요소를 반환하는 함수로 정렬할 아이템을 화면상에 어떻게 보일 지를 결정한다. <br/> parameter: item (data의 item), index(item의 data 속 index) |
-  |updateData|onDropItem 에서 item을 재졍렬해 data를 변경할때, 변경된 data를 SortableList 외부에서도 반영할 수 있게 해ㅔ준다. |
-  |dragItemStyleProps| 모바일 브라우저에서 드래그앤 드롭을 실행 시, 터치 포인트를 따라다니는 요소의 스타일로 기본값은 undefined ,type:CSSProperties|undefined|
+  |renderItem| SortableItem의 children 요소를 반환하는 함수로 정렬할 아이템을 화면상에 어떻게 보일 지를 결정함.<br/> parameter: item (data의 item), index(item의 data 속 index) |
+  |updateData|onDropItem 에서 item을 재졍렬해 data를 변경할때, 변경된 data를 SortableList 외부에서도 반영할 수 있게 해줌 |
+  |dragItemStyleProps| 모바일 브라우저에서 드래그앤 드롭을 실행 시, 터치 포인트를 따라다니는 요소의 스타일로 기본값은 undefined. <br/>type:CSSProperties|undefined|
 
 ### b. 사용 예시
 
 - App.js
 
 ```js
-import SortableList from "@badahertz52/sortable-list";
+import SortableList from "@badahertz52/sortable-list/dist/SortableList";
 import { data } from "./TestItem/testData";
 import TestItem from "./TestItem/TestItem";
 function App() {
@@ -170,6 +169,6 @@ npm publish
 
 ## Update
 
-🔧 2023 .8 d
+🔧 2023 .8
 
 - 모바일 브라우저에서도 터치를 통해 드래그 앤 드롭을 할 수 있도록 함
