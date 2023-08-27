@@ -124,7 +124,6 @@ const SortableList = ({
           onClickItem={onClickItem}
           mobileDrag={mobileDrag}
           setMobileDrag={setMobileDrag}
-          startIndex={startIndex}
         >
           {renderItem(item, index)}
         </SortableListItem>
@@ -136,7 +135,6 @@ const SortableList = ({
         onDropItem={onDropItem}
         mobileDrag={mobileDrag}
         setMobileDrag={setMobileDrag}
-        startIndex={startIndex}
       />
       {mobileDrag && (
         <div className="drag-item" style={dragItemStyle}>
@@ -147,7 +145,6 @@ const SortableList = ({
             onDropItem={onDropItem}
             mobileDrag={mobileDrag}
             setMobileDrag={setMobileDrag}
-            startIndex={startIndex}
           >
             {renderItem(listData[startIndex], startIndex)}
           </SortableListItem>

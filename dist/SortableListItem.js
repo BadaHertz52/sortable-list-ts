@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = __importStar(require("react"));
-const SortableListItem = ({ index, draggable, children, onDragStart, onDropItem, onClickItem, mobileDrag, setMobileDrag, startIndex, }) => {
+const SortableListItem = ({ index, draggable, children, onDragStart, onDropItem, onClickItem, mobileDrag, setMobileDrag, }) => {
     let timeout = undefined;
     const itemRef = (0, react_1.useRef)(null);
     const onDragStartItem = () => {

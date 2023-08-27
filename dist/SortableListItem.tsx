@@ -15,7 +15,6 @@ type SortableListItemProps = {
   onClickItem?: (index: number) => void;
   mobileDrag: boolean;
   setMobileDrag: Dispatch<SetStateAction<boolean>>;
-  startIndex: number;
 };
 
 const SortableListItem = ({
@@ -27,7 +26,6 @@ const SortableListItem = ({
   onClickItem,
   mobileDrag,
   setMobileDrag,
-  startIndex,
 }: SortableListItemProps) => {
   let timeout: undefined | NodeJS.Timeout = undefined;
   const itemRef = useRef<HTMLLIElement>(null);

@@ -8,7 +8,6 @@ type SortableListItemProps = {
     onClickItem?: (index: number) => void;
     mobileDrag: boolean;
     setMobileDrag: Dispatch<SetStateAction<boolean>>;
-    startIndex: number;
 };
-declare const _default: React.MemoExoticComponent<({ index, draggable, children, onDragStart, onDropItem, onClickItem, mobileDrag, setMobileDrag, startIndex, }: SortableListItemProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: React.MemoExoticComponent<({ index, draggable, children, onDragStart, onDropItem, onClickItem, mobileDrag, setMobileDrag, }: SortableListItemProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;
