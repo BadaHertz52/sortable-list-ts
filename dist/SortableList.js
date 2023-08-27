@@ -30,19 +30,21 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = __importStar(require("react"));
 require("./SortableList.css");
 const SortableListItem_1 = __importDefault(require("./SortableListItem"));
-const SortableList = ({ data, onClickItem, renderItem, updateData, }) => {
+const SortableList = ({ data, onClickItem, renderItem, updateData, dragItemStyleProps, }) => {
     /**
      * drag되는 item 의 index
      */
     const [startIndex, setStartIndex] = (0, react_1.useState)(0);
     const [listData, setListData] = (0, react_1.useState)(data);
     const [mobileDrag, setMobileDrag] = (0, react_1.useState)(false);
-    const initialDragItemStyle = {
+    const basicDragItemStyle = {
         position: "absolute",
         opacity: 0.5,
         top: "110%",
         left: 0,
     };
+    const initialDragItemStyle = dragItemStyleProps
+        ? Object.assign(Object.assign({}, basicDragItemStyle), dragItemStyleProps) : basicDragItemStyle;
     const [dragItemStyle, setDragItemStyle] = (0, react_1.useState)(initialDragItemStyle);
     const [dataPositionArray, setDataPositionArray] = (0, react_1.useState)(undefined);
     const listRef = (0, react_1.useRef)(null);
@@ -76,8 +78,9 @@ const SortableList = ({ data, onClickItem, renderItem, updateData, }) => {
         var _a, _b, _c, _d;
         if (mobileDrag && dataPositionArray) {
             const itemHeight = (_a = document.querySelector(".sortable-list .item")) === null || _a === void 0 ? void 0 : _a.clientHeight;
-            if (itemHeight) {
-                const top = event.touches[0].clientY;
+            if (itemHeight && listRef.current) {
+                const listTop = listRef.current.getBoundingClientRect().top;
+                const top = event.touches[0].clientY - listTop;
                 const bottom = top + itemHeight;
                 setDragItemStyle(Object.assign(Object.assign({}, initialDragItemStyle), { top: top + itemHeight * 0.5 }));
                 const target = dataPositionArray.filter((e) => e.y <= bottom && e.y >= top)[0];

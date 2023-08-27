@@ -14,6 +14,7 @@ type SortableListProps = {
   onClickItem: (index: number) => void;
   renderItem: (item: any, index: number) => JSX.Element;
   updateData?: (newPlayList: any) => void;
+  dragItemStyleProps?: CSSProperties;
 };
 
 const SortableList = ({
@@ -21,6 +22,7 @@ const SortableList = ({
   onClickItem,
   renderItem,
   updateData,
+  dragItemStyleProps,
 }: SortableListProps) => {
   /**
    * drag되는 item 의 index
@@ -28,13 +30,18 @@ const SortableList = ({
   const [startIndex, setStartIndex] = useState(0);
   const [listData, setListData] = useState(data);
   const [mobileDrag, setMobileDrag] = useState(false);
-
-  const initialDragItemStyle: CSSProperties = {
+  const basicDragItemStyle: CSSProperties = {
     position: "absolute",
     opacity: 0.5,
     top: "110%",
     left: 0,
   };
+  const initialDragItemStyle: CSSProperties = dragItemStyleProps
+    ? {
+        ...basicDragItemStyle,
+        ...dragItemStyleProps,
+      }
+    : basicDragItemStyle;
   type DataPosition = {
     element: Element;
     y: number;
@@ -80,8 +87,9 @@ const SortableList = ({
       const itemHeight = document.querySelector(
         ".sortable-list .item"
       )?.clientHeight;
-      if (itemHeight) {
-        const top = event.touches[0].clientY;
+      if (itemHeight && listRef.current) {
+        const listTop = listRef.current.getBoundingClientRect().top;
+        const top = event.touches[0].clientY - listTop;
         const bottom = top + itemHeight;
         setDragItemStyle({
           ...initialDragItemStyle,
